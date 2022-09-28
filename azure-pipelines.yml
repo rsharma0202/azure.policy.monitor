@@ -26,7 +26,6 @@ stages:
   jobs:
   - job: Bicep_Validation
     displayName: ARM Deployment Validation
-    dependsOn: lint_tests
     pool:
       vmImage: windows-latest
     steps:
