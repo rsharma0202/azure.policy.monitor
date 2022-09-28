@@ -42,7 +42,7 @@ stages:
     - task: AzureCLI@2
       displayName: 'Create Resource Group'
       inputs:
-        azureSubscription: 'sub-mgmt-dev'
+        azureSubscription: 'rsharma-Azure-LAB'
         scriptType: bash
         scriptLocation: inlineScript
         inlineScript: |
@@ -51,7 +51,7 @@ stages:
     - task: AzureCLI@2
       displayName: 'Template Validation - Function App'
       inputs:
-        azureSubscription: 'sub-mgmt-dev'
+        azureSubscription: 'rsharma-Azure-LAB'
         scriptType: ps
         scriptLocation: inlineScript
         inlineScript: |
@@ -59,7 +59,7 @@ stages:
     - task: AzureCLI@2
       displayName: 'Get Function App Template Deployment What-If Result'
       inputs:
-        azureSubscription: 'sub-mgmt-dev'
+        azureSubscription: 'rsharma-Azure-LAB'
         scriptType: ps
         scriptLocation: inlineScript
         inlineScript: |
@@ -67,7 +67,7 @@ stages:
     - task: AzureCLI@2
       displayName: 'Template Validation - Event Grid'
       inputs:
-        azureSubscription: 'sub-mgmt-dev'
+        azureSubscription: 'rsharma-Azure-LAB'
         scriptType: ps
         scriptLocation: inlineScript
         inlineScript: |
@@ -75,7 +75,7 @@ stages:
     - task: AzureCLI@2
       displayName: 'Get Event Grid Template Deployment What-If Result'
       inputs:
-        azureSubscription: 'sub-mgmt-dev'
+        azureSubscription: 'rsharma-Azure-LAB'
         scriptType: ps
         scriptLocation: inlineScript
         inlineScript: |
@@ -148,7 +148,7 @@ stages:
               - task: AzureCLI@2
                 displayName: 'Deploy Function App'
                 inputs:
-                  azureSubscription: 'sub-mgmt-dev'
+                  azureSubscription: 'rsharma-Azure-LAB'
                   scriptType: bash
                   scriptLocation: inlineScript
                   inlineScript: |
@@ -156,7 +156,7 @@ stages:
               - task: AzureFunctionApp@1
                 displayName: 'Azure functions app deploy'
                 inputs:
-                  azureSubscription: 'sub-mgmt-dev'
+                  azureSubscription: 'rsharma-Azure-LAB'
                   appType: functionAppLinux
                   appName: $(functionAppName)
                   package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
@@ -179,7 +179,7 @@ stages:
               - task: AzureCLI@2
                 displayName: 'Deploy Event Grid'
                 inputs:
-                  azureSubscription: 'sub-mgmt-dev'
+                  azureSubscription: 'rsharma-Azure-LAB'
                   scriptType: bash
                   scriptLocation: inlineScript
                   inlineScript: |
@@ -204,7 +204,7 @@ stages:
               - task: AzurePowerShell@5
                 displayName: 'Get management subscription Id'
                 inputs:
-                  azureSubscription: 'sub-mgmt-dev'
+                  azureSubscription: 'rsharma-Azure-LAB'
                   ScriptType: InlineScript
                   Inline: |
                     $subId = (get-azcontext).subscription.id
@@ -213,7 +213,7 @@ stages:
               - task: AzureCLI@2
                 displayName: 'Deploy Event Grid'
                 inputs:
-                  azureSubscription: 'sub-lz-dev-1'
+                  azureSubscription: 'rsharma-Azure-LAB'
                   scriptType: bash
                   scriptLocation: inlineScript
                   inlineScript: |
@@ -242,7 +242,7 @@ stages:
               - task: AzureCLI@2
                 displayName: 'Deploy Function App'
                 inputs:
-                  azureSubscription: 'sub-mgmt-prod'
+                  azureSubscription: 'rsharma-Azure-LAB'
                   scriptType: bash
                   scriptLocation: inlineScript
                   inlineScript: |
@@ -252,7 +252,7 @@ stages:
               - task: AzureFunctionApp@1
                 displayName: 'Azure functions app deploy'
                 inputs:
-                  azureSubscription: 'sub-mgmt-prod'
+                  azureSubscription: 'rsharma-Azure-LAB'
                   appType: functionAppLinux
                   appName: $(functionAppName)
                   package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
@@ -275,7 +275,7 @@ stages:
               - task: AzureCLI@2
                 displayName: 'Deploy Event Grid'
                 inputs:
-                  azureSubscription: 'sub-mgmt-prod'
+                  azureSubscription: 'rsharma-Azure-LAB'
                   scriptType: bash
                   scriptLocation: inlineScript
                   inlineScript: |
@@ -300,7 +300,7 @@ stages:
               - task: AzurePowerShell@5
                 displayName: 'Get management subscription Id'
                 inputs:
-                  azureSubscription: 'sub-mgmt-prod'
+                  azureSubscription: 'rsharma-Azure-LAB'
                   ScriptType: InlineScript
                   Inline: |
                     $subId = (get-azcontext).subscription.id
@@ -309,7 +309,7 @@ stages:
               - task: AzureCLI@2
                 displayName: 'Deploy Event Grid'
                 inputs:
-                  azureSubscription: 'sub-lz-prod-1'
+                  azureSubscription: 'rsharma-Azure-LAB'
                   scriptType: bash
                   scriptLocation: inlineScript
                   inlineScript: |
